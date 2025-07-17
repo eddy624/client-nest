@@ -44,7 +44,7 @@ limit_request_field_size = 8190
 # Environment variables
 raw_env = [
     "DJANGO_SETTINGS_MODULE=config.settings",
-    "DJANGO_SECRET_KEY=o(6#7-g6rrr**)(e^oixs_rb$5-!#5=q63sm8@e)_)3ru4ftoq",
+    f"DJANGO_SECRET_KEY={os.getenv('DJANGO_SECRET_KEY', 'default-secret-key')}",
     "DEBUG=False",
     "ALLOWED_HOSTS=clientnest.xyz,www.clientnest.xyz,api.clientnest.xyz",
     "SECURE_SSL_REDIRECT=True",
